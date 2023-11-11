@@ -1,0 +1,148 @@
+/* Code by: Juan José Medina Ramos */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{    
+    background-color: #f1f2f6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+.headerClass{
+    text-align: center;
+    background-color: #4b4b4b; 
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 20px  15px;
+}
+.navegacion{
+    text-align: left;
+    border-left: 2px solid #b2bec3;
+}
+.navegacion li{
+    list-style: none;
+    display: inline-block;
+    font: bold 16px, Verdana, Geneva, Tahoma, sans-serif;
+}
+.navegacion button{
+
+    background-color: white;
+    color: black;
+    font: bold 16px, Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px,0px;
+    border-radius: 5px;
+}
+.navegacion a{
+    text-decoration: none;
+    color:black;
+    padding: 10px;
+}
+.navegacion a:hover{
+    background-color: #84817a;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Código crud*/
+
+.container{
+    width: 100%;
+    height:calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.agrupador{
+    width: 100%;
+}
+.container .agrupador{
+    width: 30%;
+    height: 50%;
+    background-color: #84817a;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    border: 4px solid white ;
+}
+
+.container .agrupador:hover{
+    background-color: white;
+    border: 4px solid #84817a;
+    cursor: pointer;
+}
+
+.container .agrupador h3{
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 2em;
+
+}
+.container .agrupador p{
+    margin-top: 10px;
+    font-weight: 100;
+    font-size: medium;
+}
+
+.container .agrupador form{
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .agrupador form input{
+   width: 100%;
+   margin: 5px 5px;
+   padding: 10px 10px;
+
+}
+.container .agrupador form select {
+    margin: 10px 10px;
+    padding: 10px 10px;
+}
+.container .agrupador form button {
+    margin: 5px 5px;
+    padding: 10px 10px;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.list{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 0 30px;
+    background-color: #84817a;
+}
+
+.list p{
+    margin-top: 10px;
+    font-weight: 100;
+    font-size: medium;
+}
+
+.botonEliminar , .botonEditar {
+    padding: 5px 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+hr{
+    width: 100%;
+    height: 2px;
+}

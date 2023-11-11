@@ -101,8 +101,14 @@ body{
     margin: 15px;
     padding: 0 30px;
     background-color: #84817a;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    border: 4px solid white ;
 }
-
+.list .containerDatos:hover{
+    background-color: white;
+    border: 4px solid #84817a;
+    cursor: pointer;
+}
 .list p{
     margin-top: 10px;
     font-weight: 100;

@@ -23,8 +23,9 @@ const botonAdd=document.querySelector('#botonAgregar');
 
 //Vamos añadirle un evento al botón para validar que el formulario siempre este lleno al momento de darle submit
 formulario.addEventListener('submit',validarFormulario);
+//Fución para remover ramificaciones hijas del formulario
 function limpiarList(){
-    const containerDatos=document.querySelector('.list');
+    const containerDatos=document.querySelector('.containerDatos');
     while(containerDatos.firstChild){
         containerDatos.removeChild(containerDatos.firstChild);
     }
@@ -73,23 +74,24 @@ function limpiarObj(){
 function agregarPersona(){
     Datos.push({...objPersona});
     mostrarPersona();
-    limpiarForm();
+    formulario.reset()
     limpiarObj();
 }
 
 //Función para mostrar persona
 function mostrarPersona(){
-    const containerDatos=document.querySelector('.list');
+    const containerDatos=document.querySelector('.containerDatos');
     limpiarList();
 
     //ForEach que recorre el arreglo para desplegar los datos 
     Datos.forEach(persona =>  {
         const {id,nombre,correo,edad,sexo}=persona;
+
         const parrafo=document.createElement('p');
         parrafo.textContent=`${id} | ${nombre} | ${correo} | ${edad} | ${sexo} | `;
         parrafo.dataset.id=id;
         
-        //Creación delotón para editar
+        //Creación de botón para editar
         const editarBoton=document.createElement('button');
         editarBoton.onclick= () => cargarPersona(persona);
         editarBoton.textContent='Editar';
@@ -114,9 +116,9 @@ function mostrarPersona(){
 
 //Función para cargar personas al formulario
 function cargarPersona(persona) {
-   const {id, nombre, email, edad, sexo} = persona;
+   const {id, nombre, correo, edad, sexo} = persona;
    nombreInput.value = nombre;
-   correoInput.value = email;
+   correoInput.value = correo;
    edadInput.value = edad;
    sexoInput.value = sexo;
   
@@ -127,25 +129,25 @@ function cargarPersona(persona) {
 }
 
 //Función para editar persona
-function editarPersona(persona) {
-    objPersona.nombre = persona.nombre
-    objPersona.correo = persona.correo
-    objPersona.edad = persona.edad
-    objPersona.sexo = persona.sexo
+function editarPersona() {
+    objPersona.nombre = nombreInput.value;
+    objPersona.correo = correoInput.value;
+    objPersona.edad = edadInput.value;
+    objPersona.sexo = sexoInput.value;
     
-    containerDatos.map(persona =>{
+    Datos.map(persona =>{
         if(persona.id === objPersona.id) {
-            persona.id=persona.id;
+            persona.id=objPersona.id;
             persona.nombre=objPersona.nombre;
             persona.correo=objPersona.correo;
             persona.edad=objPersona.edad;
             persona.sexo=objPersona.sexo;
     }     
 });
-    limpiarForm();
-    mostrarPersona();
     limpiarList();
-    formulario.querySelector('button[type="submit"]').textContent = 'Actualizar';
+    mostrarPersona();
+    formulario.reset()
+    formulario.querySelector('button[type="submit"]').textContent = 'Agregar';
     //La "bandera" editar se cambiara a falso para que no se repita el proceso de modificación
     editar=false;
 }

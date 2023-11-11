@@ -18,33 +18,6 @@ body{
     margin: 0;
     padding: 20px  15px;
 }
-.navegacion{
-    text-align: left;
-    border-left: 2px solid #b2bec3;
-}
-.navegacion li{
-    list-style: none;
-    display: inline-block;
-    font: bold 16px, Verdana, Geneva, Tahoma, sans-serif;
-}
-.navegacion button{
-
-    background-color: white;
-    color: black;
-    font: bold 16px, Verdana, Geneva, Tahoma, sans-serif;
-    margin: 20px,0px;
-    border-radius: 5px;
-}
-.navegacion a{
-    text-decoration: none;
-    color:black;
-    padding: 10px;
-}
-.navegacion a:hover{
-    background-color: #84817a;
-    color: white;
-    border-radius: 5px;
-}
 
 /* Código crud*/
 
